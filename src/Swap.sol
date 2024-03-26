@@ -105,6 +105,43 @@ contract Swap {
         
     }
 
+      function swapDIAforETH(uint256 _tokenAmount) external {
+
+        require(ethAddress.balanceOf(msg.sender) >= _tokenAmount,"insufficient balance");
+        
+        int256 daiPrice = getLatestPrice(daiUsdPriceFeed);
+        int256 ethPrice = getLatestPrice(ethUsdPriceFeed);
+
+        // Perform swap based on fetched prices
+        uint256 ethAmount_ = (_tokenAmount * uint256(daiPrice)) / uint256(ethPrice);
+
+        require(daiAddress.balanceOf(address(this)) >= ethAmount_, "insufficient link token");
+        ethAddress.transferFrom(msg.sender, address(this), _tokenAmount);
+        ethAddress.transfer(msg.sender, ethAmount_);
+        
+        emit SwapDiaForLink(msg.sender, address(this), _tokenAmount);
+        
+    }
+
+       function swapLINKforETH(uint256 _tokenAmount) external {
+
+        require(linkAddress.balanceOf(msg.sender) >= _tokenAmount,"insufficient balance");
+        
+        int256 linkPrice = getLatestPrice(linkUsdPriceFeed);
+        int256 ethPrice = getLatestPrice(ethUsdPriceFeed);
+
+        // Perform swap based on fetched prices
+        uint256 ethAmount_ = (_tokenAmount * uint256(linkPrice)) / uint256(ethPrice);
+
+        require(daiAddress.balanceOf(address(this)) >= ethAmount_, "insufficient link token");
+        ethAddress.transferFrom(msg.sender, address(this), _tokenAmount);
+        ethAddress.transfer(msg.sender, ethAmount_);
+        
+        emit SwapDiaForLink(msg.sender, address(this), _tokenAmount);
+        
+    }
+
+
 
 
 
