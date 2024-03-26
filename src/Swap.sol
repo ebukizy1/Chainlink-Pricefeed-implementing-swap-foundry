@@ -123,25 +123,7 @@ contract SwapContract {
 
     }
 
-    //  function swapDaiLink(uint256 _amountA) external {
-    //     require(msg.sender != address(0), "address zero detected");
-
-    //     require(_amountA > 0 , "Can't exchange zero amount");
-
-    //     require(dai.balanceOf(msg.sender) >= _amountA, "Insufficient Balance");
-
-    //     uint _amountB = 50;
-        
-
-    //     require(link.balanceOf(address(this)) >= _amountB, "Not enough tokenB");
-
-    //     dai.transferFrom(msg.sender, address(this), _amountA);
-
-    //     link.transfer(msg.sender , _amountB);
-
-    //     emit SwapSuccessful(msg.sender, _amountA , _amountB);
-
-    // }
+  
 
  function swapDaiLink(uint256 _amountA) external {
         require(msg.sender != address(0), "address zero detected");
