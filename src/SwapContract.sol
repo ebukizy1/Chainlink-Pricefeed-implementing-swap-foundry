@@ -224,3 +224,12 @@ contract SwapContract {
 }
 
  
+
+
+// $ forge create --rpc-url https:eth-sepolia.g.alchemy.com/v2/3hjxNaZiX0_Axc9w2_wiD7hxi_0QU5bs --private-key ef257f59dc15ea8d0cfa7f5a177fb173b3125a3d79e6c13eb1e88831e40dc62c src/SwapContract.sol:SwapContract
+
+// $ forge create --rpc-url https:eth-sepolia.g.alchemy.com/v2/3hjxNaZiX0_Axc9w2_wiD7hxi_0QU5bs \
+//     --private-key ef257f59dc15ea8d0cfa7f5a177fb173b3125a3d79e6c13eb1e88831e40dc62c\
+//     --etherscan-api-key 3hjxNaZiX0_Axc9w2_wiD7hxi_0QU5bs \
+//     --verify \
+//     src/SwapContract.sol:SwapContract

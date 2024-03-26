@@ -3,7 +3,7 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
-import "../src/Swap.sol";
+import "../src/SwapContract.sol";
 import "../src/ERC20.sol";
 import "../src/ISwapContract.sol";
 import "./../src/IERC20.sol";
@@ -24,7 +24,7 @@ contract SwapContractTest is Test {
         dai =  IERC20(0xFF34B3d4Aee8ddCd6F9AFFFB6Fe49bD371b8a357);
         link =  IERC20(0xf8Fb3713D459D7C1018BD0A49D19b4C44290EBE5);
         eth =  IERC20(0xb16F35c0Ae2912430DAc15764477E179D9B9EbEa);
-        swapContract = ISwapContract(0x2106a21bc6CF3aA7ea04ea810AfB2041342BcB48);
+        swapContract = ISwapContract(0x8527c7280a0D7c3B9a3fC9Fc016203ed507702Bd);
     }
 
     function testSwapEthDai() public {
